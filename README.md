@@ -29,4 +29,4 @@ Stack methods:
     size()
 
 
-[![Travis](https://api.travis-ci.org/jbrengman/data_structures)](https://api.travis-ci.org/jbrengman/data_structures)
+[![Build Status](https://travis-ci.org/jbrengman/data_structures.png?branch=master)](https://travis-ci.org/jbrengman/data_structures)
