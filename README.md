@@ -25,5 +25,8 @@ Stack methods:
     push(value)
 
     pop()
-    
+
     size()
+
+
+[![Travis](https://api.travis-ci.org/jbrengman/data_structures)](https://api.travis-ci.org/jbrengman/data_structures)
