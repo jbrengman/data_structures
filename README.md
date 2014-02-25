@@ -29,4 +29,15 @@ Stack methods:
     size()
 
 
+Queue is implemented as a doubly linked list.
+
+Queue methods:
+
+    enqueue(value)
+
+    dequeue()
+
+    size()
+
+
 [![Build Status](https://travis-ci.org/jbrengman/data_structures.png?branch=master)](https://travis-ci.org/jbrengman/data_structures)
