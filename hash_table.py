@@ -1,6 +1,6 @@
 class HashTable:
 
-    def __init__(self, slots=32):
+    def __init__(self, slots=1024):
         self.slots = slots
         self.bucket_list = []
         for x in range(slots):
