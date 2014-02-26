@@ -40,4 +40,13 @@ Queue methods:
     size()
 
 
+Hash Table methods:
+
+    set(key, value)
+
+    get(key)
+
+    hash(key)
+
+
 [![Build Status](https://travis-ci.org/jbrengman/data_structures.png?branch=master)](https://travis-ci.org/jbrengman/data_structures)

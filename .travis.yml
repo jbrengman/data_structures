@@ -8,3 +8,4 @@ script:
     - python linked_list_test.py
     - python stack_test.py
     - python queue_test.py
+    - python hash_table_test.py
