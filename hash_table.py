@@ -1,6 +1,7 @@
 class HashTable:
 
-    def __init__(self, slots=32):  # Only need 32 slots due to hash function
+    def __init__(self, slots=32):
+        self.slots = slots
         self.bucket_list = []
         for x in range(slots):
             self.bucket_list.append(HashBucket())
@@ -21,7 +22,7 @@ class HashTable:
         hashed = 0
         for c in key:
             hashed += ord(c)
-        hashed = hashed % 31
+        hashed = hashed % self.slots
         return hashed
 
 
