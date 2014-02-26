@@ -22,8 +22,7 @@ class HashTable:
         hashed = 0
         for c in key:
             hashed += ord(c)
-        hashed = hashed % self.slots
-        return hashed
+        return hashed % self.slots
 
 
 class HashBucket:
