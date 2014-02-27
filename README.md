@@ -48,5 +48,11 @@ Hash Table methods:
 
     hash(key)
 
+hash_month.py: This is a subclass of hash_table
+
+    make_month(year, month) - returns a hash_month object for the given month
+
+    day(n) - returns the first two letters of the day of the week (ex: Mo, Tu, We, etc) for the 'n'th day of the month.
+
 
 [![Build Status](https://travis-ci.org/jbrengman/data_structures.png?branch=master)](https://travis-ci.org/jbrengman/data_structures)
