@@ -56,4 +56,19 @@ hash_month.py: This is a subclass of hash_table
     he 'n'th day of the month.
 
 
+Binary Search Tree (bst.py) methods:
+
+    insert(value)
+
+    contains(value)
+
+    size()
+
+    depth()
+
+    balance()
+
+    save_dot(): Saves a dot file for visualizing the tree.
+
+
 [![Build Status](https://travis-ci.org/jbrengman/data_structures.png?branch=master)](https://travis-ci.org/jbrengman/data_structures)
