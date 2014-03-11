@@ -93,3 +93,38 @@ class TreeNode(object):
             r = random.randint(0, 1e9)
             yield "\tnull%s [shape=point];" % r
             yield "\t%s -> null%s;" % (self.value, r)
+
+if __name__ == '__main__':
+    '''
+    Add values 1 - 900 to two binary search trees, one in order, the other
+    in random order, and then compare the average lookup times for all
+    values 1 - 900.
+    '''
+    from time import time
+    linear_tree = BinarySearchTree()
+    random_tree = BinarySearchTree()
+    val_list = []
+    for x in range(1, 901):
+        val_list.append(x)
+    for val in val_list:
+        linear_tree.insert(val)
+    random.shuffle(val_list)
+    for val in val_list:
+        random_tree.insert(val)
+    linear_time = 0
+    random_time = 0
+    for x in range(1, 901):
+        start = time()
+        linear_tree.contains(x)
+        t = time() - start
+        linear_time += t
+        start = time()
+        random_tree.contains(x)
+        t = time() - start
+        random_time += t
+    linear_avg = linear_time / 900
+    random_avg = random_time / 900
+    print(
+        'Linear BST average lookup time for values 1 - 900: %s' % linear_avg)
+    print(
+        'Random BST average lookup time for values 1 - 900: %s' % random_avg)
