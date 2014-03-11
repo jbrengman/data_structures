@@ -8,10 +8,13 @@ class BinarySearchTreeTests(unittest.TestCase):
     def setUp(self):
         self.tree = bst.BinarySearchTree()
         self.tree_values_list = []
-        for x in range(100):
+        count = 0
+        while count < 100:
             n = random.randrange(0, 1000)
-            self.tree_values_list.append(n)
-            self.tree.insert(n)
+            if n not in self.tree_values_list:
+                self.tree_values_list.append(n)
+                self.tree.insert(n)
+                count += 1
 
     def test_insert(self):
         # Add 100 numbers not already in tree
@@ -20,7 +23,6 @@ class BinarySearchTreeTests(unittest.TestCase):
         while count < 100:
             n = random.randrange(0, 1000)
             if n not in self.tree_values_list:
-                # self.assertFalse(self.tree.contains(n))
                 inserted_values.append(n)
                 self.tree.insert(n)
                 count += 1
@@ -46,6 +48,7 @@ class BinarySearchTreeTests(unittest.TestCase):
         while count < 100:
             n = random.randrange(0, 1000)
             if n not in self.tree_values_list:
+                self.tree_values_list.append(n)
                 self.tree.insert(n)
                 count += 1
         expected = 200
