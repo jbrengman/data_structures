@@ -15,6 +15,10 @@ class BinarySearchTreeTests(unittest.TestCase):
                 self.tree_values_list.append(n)
                 self.tree.insert(n)
                 count += 1
+        self.trav_tree = bst.BinarySearchTree()
+        nums = [20, 10, 30, 5, 15, 25, 35]
+        for num in nums:
+            self.trav_tree.insert(num)
 
     def test_insert(self):
         # Add 100 numbers not already in tree
@@ -88,6 +92,38 @@ class BinarySearchTreeTests(unittest.TestCase):
                     - self.tree._depth(self.tree.root.right))
         result = self.tree.balance()
         self.assertEqual(expected, result)
+
+    def test_in_order(self):
+        gen = self.trav_tree.in_order_traversal()
+        exp = [5, 10, 15, 20, 25, 30, 35]
+        for expected in exp:
+            result = gen.next()
+            self.assertEqual(expected, result)
+        self.assertRaises(StopIteration, gen.next)
+
+    def test_pre_order(self):
+        gen = self.trav_tree.pre_order_traversal()
+        exp = [20, 10, 5, 15, 30, 25, 35]
+        for expected in exp:
+            result = gen.next()
+            self.assertEqual(expected, result)
+        self.assertRaises(StopIteration, gen.next)
+
+    def test_post_order(self):
+        gen = self.trav_tree.post_order_traversal()
+        exp = [5, 15, 10, 25, 35, 30, 20]
+        for expected in exp:
+            result = gen.next()
+            self.assertEqual(expected, result)
+        self.assertRaises(StopIteration, gen.next)
+
+    def test_breadth_first(self):
+        gen = self.trav_tree.breadth_first_traversal()
+        exp = [20, 10, 30, 5, 15, 25, 35]
+        for expected in exp:
+            result = gen.next()
+            self.assertEqual(expected, result)
+        self.assertRaises(StopIteration, gen.next)
 
 if __name__ == '__main__':
     unittest.main()

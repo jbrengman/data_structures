@@ -1,4 +1,5 @@
 import random
+from queue import Queue
 
 
 class BinarySearchTree(object):
@@ -57,6 +58,56 @@ class BinarySearchTree(object):
     def save_dot(self):
         with open('bst.dot', 'w') as outfile:
             outfile.write(self.root.get_dot())
+
+    def in_order_traversal(self):
+        for x in self._in_order_traversal(self.root):
+            yield x
+
+    def _in_order_traversal(self, node):
+        if node.left:
+            for x in self._in_order_traversal(node.left):
+                yield x
+        yield node.value
+        if node.right:
+            for x in self._in_order_traversal(node.right):
+                yield x
+
+    def pre_order_traversal(self):
+        for x in self._pre_order_traversal(self.root):
+            yield x
+
+    def _pre_order_traversal(self, node):
+        yield node.value
+        if node.left:
+            for x in self._pre_order_traversal(node.left):
+                yield x
+        if node.right:
+            for x in self._pre_order_traversal(node.right):
+                yield x
+
+    def post_order_traversal(self):
+        for x in self._post_order_traversal(self.root):
+            yield x
+
+    def _post_order_traversal(self, node):
+        if node.left:
+            for x in self._post_order_traversal(node.left):
+                yield x
+        if node.right:
+            for x in self._post_order_traversal(node.right):
+                yield x
+        yield node.value
+
+    def breadth_first_traversal(self):
+        q = Queue()
+        q.enqueue(self.root)
+        while q.size() > 0:
+            current = q.dequeue()
+            yield current.value
+            if current.left:
+                q.enqueue(current.left)
+            if current.right:
+                q.enqueue(current.right)
 
 
 class TreeNode(object):
