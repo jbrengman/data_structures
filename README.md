@@ -70,5 +70,13 @@ Binary Search Tree (bst.py) methods:
 
     save_dot(): Saves a dot file for visualizing the tree.
 
+    in_order_traversal()
+
+    pre_order_traversal()
+
+    post_order_traversal()
+
+    breadth_first_traversal()
+
 
 [![Build Status](https://travis-ci.org/jbrengman/data_structures.png?branch=master)](https://travis-ci.org/jbrengman/data_structures)
