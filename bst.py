@@ -109,6 +109,62 @@ class BinarySearchTree(object):
             if current.right:
                 q.enqueue(current.right)
 
+    def remove(self, val):
+        if self.root.value == val:
+            self.root = self.replace_removed(self.root)
+        else:
+            self._remove(val, self.root)
+
+    def _remove(self, val, current):
+        if val < current.value:
+            if not current.left:
+                raise IndexError('Value not found.')
+            elif current.left.value == val:
+                current.left = self.replace_removed(current.left)
+            else:
+                self._remove(val, current.left)
+        elif val > current.value:
+            if not current.right:
+                raise IndexError('Value not found.')
+            elif current.right.value == val:
+                current.right = self.replace_removed(current.right)
+            else:
+                self._remove(val, current.right)
+
+    def replace_removed(self, current):
+        if not current.left and not current.right:
+            return None
+        elif not current.right:
+            return current.left
+        elif not current.left:
+            return current.right
+        replacement = self._replace_removed(current.right)
+        replacement.left, replacement.right = current.left, current.right
+        return replacement
+
+    def _replace_removed(self, current):
+        if current.left.left is None:
+            replacement = current.left
+            if current.left.right:
+                current.left = current.left.right
+            else:
+                current.left = None
+            return replacement
+        else:
+            return self._replace_removed(current.left)
+
+    def __str__(self):
+        gen = self.breadth_first_traversal()
+        as_list = []
+        s = ', '
+        try:
+            while True:
+                as_list.append(str(gen.next()))
+        except StopIteration:
+            pass
+        s = s.join(as_list)
+        return s
+
 
 class TreeNode(object):
 
@@ -144,6 +200,16 @@ class TreeNode(object):
             r = random.randint(0, 1e9)
             yield "\tnull%s [shape=point];" % r
             yield "\t%s -> null%s;" % (self.value, r)
+
+
+def _test():
+    '''Create a tree for testing.'''
+    b = BinarySearchTree()
+    nums = [20, 10, 30, 5, 15, 25, 35, 3, 7, 12, 18, 22, 27, 32, 37]
+    for num in nums:
+        b.insert(num)
+    return b
+
 
 if __name__ == '__main__':
     '''
