@@ -145,10 +145,7 @@ class BinarySearchTree(object):
     def _replace_removed(self, current):
         if current.left.left is None:
             replacement = current.left
-            if current.left.right:
-                current.left = current.left.right
-            else:
-                current.left = None
+            current.left = self.replace_removed(current.left)
             return replacement
         else:
             return self._replace_removed(current.left)
