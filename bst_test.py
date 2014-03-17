@@ -128,6 +128,7 @@ class BinarySearchTreeTests(unittest.TestCase):
     def test_remove(self):
 
         tree = bst._test()
+        # 20, 10, 30, 5, 15, 25, 35, 3, 7, 12, 18, 22, 27, 32, 37
 
         tree.remove(22)
         self.assertFalse(tree.contains(22))
