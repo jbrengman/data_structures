@@ -114,6 +114,7 @@ class BinarySearchTree(object):
             self.root = self.replace_removed(self.root)
         else:
             self._remove(val, self.root)
+        self._size -= 1
 
     def _remove(self, val, current):
         if val < current.value:
