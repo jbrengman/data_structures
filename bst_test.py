@@ -125,5 +125,27 @@ class BinarySearchTreeTests(unittest.TestCase):
             self.assertEqual(expected, result)
         self.assertRaises(StopIteration, gen.next)
 
+    def test_remove(self):
+
+        tree = bst._test()
+
+        tree.remove(22)
+        self.assertFalse(tree.contains(22))
+
+        tree.remove(20)  # remove the root
+        self.assertFalse(tree.contains(20))
+        self.assertEqual(25, tree.root.value)
+        self.assertEqual(30, tree.root.right.value)
+        self.assertEqual(27, tree.root.right.left.value)
+        self.assertEqual(35, tree.root.right.right.value)
+
+        tree.remove(10)
+        self.assertEqual(12, tree.root.left.value)
+        self.assertEqual(5, tree.root.left.left.value)
+        self.assertEqual(15, tree.root.left.right.value)
+
+        self.assertEquals(12, tree.size())
+
+
 if __name__ == '__main__':
     unittest.main()
