@@ -11,3 +11,4 @@ script:
     - python hash_table_test.py
     - python hash_month_test.py
     - python bst_test.py
+    - python insertion_sort_test.py

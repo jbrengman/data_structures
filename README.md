@@ -78,5 +78,12 @@ Binary Search Tree (bst.py) methods:
 
     breadth_first_traversal()
 
+    remove()
+
+
+Insertion sort:
+
+    sort(): Implementation of insertion sort for sorting iterables.
+
 
 [![Build Status](https://travis-ci.org/jbrengman/data_structures.png?branch=master)](https://travis-ci.org/jbrengman/data_structures)
