@@ -3,7 +3,7 @@ import bst
 import random
 
 
-class BinarySearchTreeTests(unittest.TestCase):
+class BinarySearchTreeTest(unittest.TestCase):
 
     def setUp(self):
         self.tree = bst.BinarySearchTree()
