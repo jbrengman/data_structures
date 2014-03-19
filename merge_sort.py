@@ -1,4 +1,11 @@
 
+'''
+Idea for using left[i] and right[j] rather
+than left.pop(0) and right.pop(0) taken from
+http://stackoverflow.com/questions/18761766/mergesort-python
+'''
+
+
 def sort(iterable):
     if len(iterable) < 2:
         return iterable
