@@ -42,5 +42,5 @@ if __name__ == '__main__':
 
     worst_avg = str(worst_avg / 10)
     best_avg = str(best_avg / 10)
-    print('Average worst case sort time for 1,000,000 values: %s' % t_worst)
-    print('Average best case sort time for 1,000,000 values: %s' % t_best)
+    print('Average worst case sort time for 1,000,000 values: %s' % worst_avg)
+    print('Average best case sort time for 1,000,000 values: %s' % best_avg)
