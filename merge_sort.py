@@ -35,11 +35,11 @@ if __name__ == '__main__':
     best_avg = 0
 
     worst = []
-    for x in range(0, 1000000, -1):
+    for x in range(100000, 0, -1):
         worst.append(x)
 
     best = []
-    for x in range(0, 1000000):
+    for x in range(0, 100000):
         best.append(x)
 
     for x in range(10):
@@ -57,5 +57,5 @@ if __name__ == '__main__':
 
     worst_avg = str(worst_avg / 10)
     best_avg = str(best_avg / 10)
-    print('Average worst case sort time for 1,000,000 values: %s' % worst_avg)
-    print('Average best case sort time for 1,000,000 values: %s' % best_avg)
+    print('Average worst case sort time for 100,000 values: %s' % worst_avg)
+    print('Average best case sort time for 100,000 values: %s' % best_avg)

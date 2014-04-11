@@ -81,9 +81,15 @@ Binary Search Tree (bst.py) methods:
     remove()
 
 
-Insertion sort:
+Sorting algorithms:
 
-    sort(): Implementation of insertion sort for sorting iterables.
+    Insertion sort
+
+    Merge sort
+
+    Quick sort
+
+    Radix sort
 
 
 [![Build Status](https://travis-ci.org/jbrengman/data_structures.png?branch=master)](https://travis-ci.org/jbrengman/data_structures)

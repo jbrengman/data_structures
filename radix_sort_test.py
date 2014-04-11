@@ -1,9 +1,9 @@
 import unittest
-import merge_sort
+import radix_sort
 from random import randrange
 
 
-class MergeSortTest(unittest.TestCase):
+class RadixSortTest(unittest.TestCase):
 
     def test_sort(self):
         ''' Compare results of sorting a random list with insertion sort
@@ -12,7 +12,7 @@ class MergeSortTest(unittest.TestCase):
         for x in range(10000):
             test_list.append(randrange(0, 100000))
         expected = sorted(test_list)
-        result = merge_sort.sort(test_list)
+        result = radix_sort.sort_int(test_list)
         self.assertEqual(expected, result)
 
 if __name__ == '__main__':

@@ -12,3 +12,6 @@ script:
     - python hash_month_test.py
     - python bst_test.py
     - python insertion_sort_test.py
+    - python merge_sort_test.py
+    - python quick_sort_test.py
+    - python radix_sort_test.py
